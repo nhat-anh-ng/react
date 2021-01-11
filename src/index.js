@@ -2,27 +2,43 @@ import React from "react";
 import ReactDom from "react-dom";
 import "./index.css";
 
-const title = "Dashboard";
-const subtitle = "Dribble";
-const img =
-  "https://images.unsplash.com/photo-1565103446317-476a2b789651?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=654&q=80";
+const books = [
+  {
+    title: "Algorithms to live by",
+    author: "B.Christian & T.Griffiths",
+    img: "https://images-na.ssl-images-amazon.com/images/I/617fYIbPTSL.jpg",
+  },
+
+  {
+    title: "Foundation Trilogy",
+    author: "Isaac Asimov",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81iwb+Zk5uL.jpg",
+  },
+
+  {
+    title: "Strenghtsfinder2.0",
+    author: "Tom Rath",
+    img: "https://images-na.ssl-images-amazon.com/images/I/41dy60BGoBL.jpg",
+  },
+];
 
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
+      {books.map((book, index) => {
+        return <Book key={book.id} {...book}></Book>;
+      })}
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
+  const { img, title, author } = props;
   return (
     <article className="book">
       <img src={img} />
       <h1>{title}</h1>
-      <p>{subtitle}</p>
+      <p>{author}</p>
     </article>
   );
 };

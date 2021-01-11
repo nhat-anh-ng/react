@@ -10,7 +10,7 @@ body {
 }
 
 .booklist {
-  width: 90vw;
+  width: 80vw;
   max-width: 1170px;
   margin: 5rem auto;
   display: grid;
