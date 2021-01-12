@@ -32,8 +32,7 @@ function BookList() {
   );
 }
 
-const Book = (props) => {
-  const { img, title, author } = props;
+const Book = ({ img, title, author }) => {
   return (
     <article className="book">
       <img src={img} />
@@ -43,4 +42,32 @@ const Book = (props) => {
   );
 };
 
+function Form() {
+  return (
+    <section className="form">
+      <header>
+        <h1> Formulaire De réservation</h1>
+      </header>
+      <div>
+        <input type="text" name="name" id="name" placeholder="Prénom"></input>
+      </div>
+      <div>
+        <input type="text" name="name" id="name" placeholder="Nom"></input>
+      </div>
+      <div>
+        <input type="text" name="name" id="name" placeholder="Age"></input>
+      </div>
+      <div>
+        <input type="radio" name="name" id="name" placeholder="Age"></input>
+        <label>Homme</label>
+      </div>
+      <div>
+        <input type="radio" name="name" id="name" placeholder="Age"></input>
+        <label>Femme</label>
+      </div>
+    </section>
+  );
+}
+
 ReactDom.render(<BookList />, document.getElementById("root"));
+ReactDom.render(<Form />, document.getElementById("root"));
